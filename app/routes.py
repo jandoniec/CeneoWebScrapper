@@ -12,8 +12,9 @@ def name(name):
     return f"Hello, {name}!"
 
 @app.route("/")
+@app.route("/index")
 def index():
-    return render_template('mainpage.html')
+    return render_template('index.html')
 
 @app.route("/aboutauthor")
 def author():
@@ -26,3 +27,7 @@ def extraction():
 @app.route("/productlist")
 def productList():
     return render_template('productlist.html')
+
+@app.route("/product")
+def productList():
+    return render_template('product.html')
