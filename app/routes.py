@@ -1,22 +1,20 @@
 from app import app
-from flask import Flask, render_template
+from flask import render_template
 
-@app.route('/')
-@app.route('/index')
-def index():
-    return "Hello, Jan Doniec"
+
+'''
 
 @app.route('/name/',defaults={'name':'Anonim'})
 @app.route('/name/<name>')
 def name(name):
     return f"Hello, {name}!"
-
+'''
 @app.route("/")
 @app.route("/index")
 def index():
     return render_template('index.html')
 
-@app.route("/aboutauthor")
+@app.route("/author")
 def author():
     return render_template('author.html')
 
@@ -29,5 +27,8 @@ def productList():
     return render_template('productlist.html')
 
 @app.route("/product")
-def productList():
+def product():
     return render_template('product.html')
+
+if __name__ == "__main__":
+    app.run(debug=True, host="0.0.0.0",port=8081)
